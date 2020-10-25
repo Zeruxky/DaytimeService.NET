@@ -8,7 +8,7 @@
 
 DaytimeService.NET is a implementation of the daytime protocol ([RFC867](https://tools.ietf.org/html/rfc867)) for C#.
 
-It provides a console application for running the daytime server through the CLI and a test tool for triggering the daytime server. It is developed agains .NET Standard 2.0.
+It provides a console application for running the daytime server through the CLI and a test tool for triggering the daytime server. It is developed against .NET Standard 2.0.
 
 ## Prerequisites
 
@@ -78,6 +78,12 @@ To contribute to DaytimeService.NET, follow these steps:
 5. Create the pull request.
 
 Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+## Dependencies
+
+* NET.Core 3.1 for demo test client and demo server
+* CommandLineParser 2.8.0
+* Library is compatible to .NET Standard 2.0.
 
 ## Contributors
 
