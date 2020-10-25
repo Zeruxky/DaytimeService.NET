@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DaytimeService.NET.CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "-"
+    }
+  }
+}

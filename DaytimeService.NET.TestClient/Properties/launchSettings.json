@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DaytimeService.NET.TestClient": {
+      "commandName": "Project",
+      "commandLineArgs": "-d 5874 -c TCP"
+    }
+  }
+}
