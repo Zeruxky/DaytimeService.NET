@@ -6,7 +6,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/Zeruxky/DaytimeService.NET?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/Zeruxky/DaytimeService.NET?style=social)
 
-DaytimeService.NET is a implementation of the daytime protocol ([RFC867](https://tools.ietf.org/html/rfc867)) for C#.
+DaytimeService.NET is an implementation of the daytime protocol ([RFC867](https://tools.ietf.org/html/rfc867)) for C#.
 
 It provides a console application for running the daytime server through the CLI and a test tool for triggering the daytime server. It is developed against .NET Standard 2.0.
 
