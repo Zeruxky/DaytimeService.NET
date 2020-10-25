@@ -41,6 +41,8 @@ cd pathToProject\DaytimeService.NET\DaytimeService.NET.CLI\bin\Debug\netcoreapp3
 .\DaytimeService.NET.CLI.exe -c <connection-mode> -s <listening-port>
 ```
 
+You can get additional help with the `help`-command. Use it as follows:
+
 ``` bash
 .\DaytimeService.NET.TestClient.exe --help
 ```
