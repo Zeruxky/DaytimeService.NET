@@ -51,7 +51,7 @@ namespace DaytimeService.NET
             this.listener = new UdpClient(endPoint);
         }
 
-        /// <inheritdoc cref="DaytimeService"/>
+        /// <inheritdoc />
         public override async Task RunAsync()
         {
             try

@@ -50,7 +50,7 @@ namespace DaytimeService.NET
             this.listener = new TcpListener(endPoint);
         }
 
-        /// <inheritdoc cref="DaytimeService"/>
+        /// <inheritdoc />
         public override async Task RunAsync()
         {
             this.listener.Start();
