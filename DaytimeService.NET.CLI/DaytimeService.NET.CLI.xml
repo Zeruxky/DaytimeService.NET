@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DaytimeService.NET.CLI</name>
+    </assembly>
+    <members>
+        <member name="T:DaytimeService.NET.CLI.Program">
+            <summary>
+            Provides the main entry point to start the daytime service through the CLI.
+            </summary>
+        </member>
+        <member name="M:DaytimeService.NET.CLI.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous main operation.</returns>
+        </member>
+        <member name="T:DaytimeService.NET.CLI.ServiceArguments">
+            <summary>
+            Defines the available argument options to configure the daytime service.
+            </summary>
+        </member>
+        <member name="P:DaytimeService.NET.CLI.ServiceArguments.Mode">
+            <summary>
+            Gets or sets the mode of the daytime service (UDP or TCP).
+            </summary>
+            <value>
+            The mode of the daytime service.
+            </value>
+            <remarks>
+            The default mode is UDP.
+            </remarks>
+        </member>
+        <member name="P:DaytimeService.NET.CLI.ServiceArguments.Port">
+            <summary>
+            Gets or sets the port on which the daytime service should listen.
+            </summary>
+            <value>
+            The listening port.
+            </value>
+            <remarks>
+            The default port of the daytime service is 13 for both UDP and TCP according to RFC 867.
+            </remarks>
+        </member>
+    </members>
+</doc>

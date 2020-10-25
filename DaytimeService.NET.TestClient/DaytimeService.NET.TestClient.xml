@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DaytimeService.NET.TestClient</name>
+    </assembly>
+    <members>
+        <member name="T:DaytimeService.NET.TestClient.ClientArguments">
+            <summary>
+            Represents the available options to configure the <see cref="T:DaytimeService.NET.TestClient.TestClient"/>.
+            </summary>
+        </member>
+        <member name="P:DaytimeService.NET.TestClient.ClientArguments.SourcePort">
+            <summary>
+            Gets or sets the source port of the <see cref="T:DaytimeService.NET.TestClient.TestClient"/>.
+            </summary>
+            <value>
+            The source port of the <see cref="T:DaytimeService.NET.TestClient.TestClient"/>.
+            </value>
+            <remarks>
+            If no port is given, the port will be set to -1 and a random port will be chosen.
+            </remarks>
+        </member>
+        <member name="P:DaytimeService.NET.TestClient.ClientArguments.DestinationPort">
+            <summary>
+            Gets or sets the destination port. This is equal to the listening port of the daytime service.
+            </summary>
+            <value>
+            The port of the daytime service.
+            </value>
+            <remarks>
+            Default the port 13 will be chosen for TCP and UDP according to RFC 867.
+            </remarks>
+        </member>
+        <member name="P:DaytimeService.NET.TestClient.ClientArguments.Mode">
+            <summary>
+            Gets or sets the mode of the connection between the <see cref="T:DaytimeService.NET.TestClient.TestClient"/> and the daytime service.
+            </summary>
+            <value>
+            The connection mode.
+            </value>
+            <remarks>
+            The only two available modes are UDP and TCP.
+            </remarks>
+        </member>
+        <member name="T:DaytimeService.NET.TestClient.Program">
+            <summary>
+            Provides the main entry point to start the <see cref="T:DaytimeService.NET.TestClient.TestClient"/> through the CLI.
+            </summary>
+        </member>
+        <member name="M:DaytimeService.NET.TestClient.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments to configure the <see cref="T:DaytimeService.NET.TestClient.TestClient"/>.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous main operation.</returns>
+        </member>
+        <member name="T:DaytimeService.NET.TestClient.TestClient">
+            <summary>
+            Provides functionality to run the client to test the daytime service.
+            </summary>
+        </member>
+        <member name="M:DaytimeService.NET.TestClient.TestClient.RunAsync(DaytimeService.NET.TestClient.ClientArguments)">
+            <summary>
+            Runs the test client with the given <paramref name="arguments"/>.
+            </summary>
+            <param name="arguments">The arguments to configure the <see cref="T:DaytimeService.NET.TestClient.TestClient"/>.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous run operation.</returns>
+        </member>
+    </members>
+</doc>

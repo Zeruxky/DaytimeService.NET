@@ -1,27 +1,40 @@
-﻿using System;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="TestClient.cs" author="Philip 'Zeruxky' Wille">
+// Copyright (c) Philip 'Zeruxky' Wille. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// </copyright>
 
 namespace DaytimeService.NET.TestClient
 {
+    using System;
+    using System.Net;
+    using System.Net.Sockets;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    /// <summary>
+    /// Provides functionality to run the client to test the daytime service.
+    /// </summary>
     public static class TestClient
     {
         private static readonly Random Random = new Random();
-        
+
+        /// <summary>
+        /// Runs the test client with the given <paramref name="arguments"/>.
+        /// </summary>
+        /// <param name="arguments">The arguments to configure the <see cref="TestClient"/>.</param>
+        /// <returns>A <see cref="Task"/> that represents the asynchronous run operation.</returns>
         public static async Task RunAsync(ClientArguments arguments)
         {
             var srcPort = GetSrcPort(arguments);
             var srcEndpoint = new IPEndPoint(IPAddress.Loopback, srcPort);
             var descEndpoint = new IPEndPoint(IPAddress.Loopback, arguments.DestinationPort);
 
-            if (arguments.Type == ProtocolType.Tcp)
+            if (arguments.Mode == ProtocolType.Tcp)
             {
                 await CommunicateOverTcp(srcEndpoint, descEndpoint).ConfigureAwait(false);
             }
 
-            if (arguments.Type == ProtocolType.Udp)
+            if (arguments.Mode == ProtocolType.Udp)
             {
                 await CommunicateOverUdp(srcEndpoint, descEndpoint).ConfigureAwait(false);
             }
@@ -63,7 +76,7 @@ namespace DaytimeService.NET.TestClient
                     using (var client = new TcpClient(srcEndpoint))
                     {
                         await client.ConnectAsync(descEndpoint.Address, descEndpoint.Port).ConfigureAwait(false);
-                        using (var stream = client.GetStream())
+                        await using (var stream = client.GetStream())
                         {
                             var data = new byte[256];
                             var buffer = new Memory<byte>(data);

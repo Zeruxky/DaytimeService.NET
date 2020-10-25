@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DaytimeService.NET</name>
+    </assembly>
+    <members>
+        <member name="T:DaytimeService.NET.DaytimeService">
+            <summary>
+            Provides common functionality for running a <see cref="T:DaytimeService.NET.DaytimeService"/> according to RFC 867.
+            </summary>
+        </member>
+        <member name="M:DaytimeService.NET.DaytimeService.RunAsync">
+            <summary>
+            Runs the <see cref="T:DaytimeService.NET.DaytimeService"/> in an infinity loop.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronously run operation of the <see cref="T:DaytimeService.NET.DaytimeService"/>.</returns>
+        </member>
+        <member name="M:DaytimeService.NET.DaytimeService.ToBytes(System.DateTimeOffset)">
+            <summary>
+            Converts the given <paramref name="dateTime"/> to a <see cref="T:System.Byte"/> array.
+            </summary>
+            <param name="dateTime">The date time.</param>
+            <remarks>
+            To get the <see cref="T:System.String"/> representation of the <paramref name="dateTime"/> the function uses the <see cref="M:System.DateTimeOffset.ToString"/> method.
+            The format from RFC 1123 will be used (e.g 2009-06-15T13:45:30 -> Mon, 15 Jun 2009 20:45:30 GMT).
+            </remarks>
+            <returns>The <see cref="T:System.Byte"/> array that are equivalent to the <see cref="T:System.String"/> representation of the <paramref name="dateTime"/>.</returns>
+        </member>
+        <member name="T:DaytimeService.NET.TcpDaytimeService">
+            <summary>
+            Provides functionality to run a daytime service using TCP.
+            </summary>
+            <remarks>
+            Fully accomplished to RFC 867.
+            </remarks>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:DaytimeService.NET.TcpDaytimeService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DaytimeService.NET.TcpDaytimeService"/> class.
+            </summary>
+            <remarks>
+            The default port of a <see cref="T:DaytimeService.NET.TcpDaytimeService"/> is <value>13</value> according to RFC 867.
+            </remarks>
+        </member>
+        <member name="M:DaytimeService.NET.TcpDaytimeService.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DaytimeService.NET.TcpDaytimeService"/> class.
+            </summary>
+            <param name="port">The port on which the <see cref="T:DaytimeService.NET.TcpDaytimeService"/> should listening.</param>
+        </member>
+        <member name="M:DaytimeService.NET.TcpDaytimeService.#ctor(System.Net.IPEndPoint)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DaytimeService.NET.TcpDaytimeService"/> class.
+            </summary>
+            <param name="endPoint">The <see cref="T:System.Net.IPEndPoint"/> with all data for setting up the <see cref="T:DaytimeService.NET.TcpDaytimeService"/>.</param>
+        </member>
+        <member name="M:DaytimeService.NET.TcpDaytimeService.RunAsync">
+            <inheritdoc cref="T:DaytimeService.NET.DaytimeService"/>
+        </member>
+        <member name="M:DaytimeService.NET.TcpDaytimeService.Dispose">
+            <inheritdoc cref="T:System.IDisposable"/>
+        </member>
+        <member name="T:DaytimeService.NET.UdpDaytimeService">
+            <summary>
+            Provides functionality to run a daytime service using UDP.
+            </summary>
+            <remarks>
+            Fully accomplished to RFC 867.
+            </remarks>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:DaytimeService.NET.UdpDaytimeService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DaytimeService.NET.UdpDaytimeService"/> class.
+            </summary>
+            <remarks>
+            The default port of a <see cref="T:DaytimeService.NET.UdpDaytimeService"/> is <value>13</value> according to RFC 867.
+            </remarks>
+        </member>
+        <member name="M:DaytimeService.NET.UdpDaytimeService.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DaytimeService.NET.UdpDaytimeService"/> class.
+            </summary>
+            <param name="port">The port on which the <see cref="T:DaytimeService.NET.UdpDaytimeService"/> should listening.</param>
+        </member>
+        <member name="M:DaytimeService.NET.UdpDaytimeService.#ctor(System.Net.IPEndPoint)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DaytimeService.NET.UdpDaytimeService"/> class.
+            </summary>
+            <param name="endPoint">The <see cref="T:System.Net.IPEndPoint"/> with all data for setting up the <see cref="T:DaytimeService.NET.UdpDaytimeService"/>.</param>
+        </member>
+        <member name="M:DaytimeService.NET.UdpDaytimeService.RunAsync">
+            <inheritdoc cref="T:DaytimeService.NET.DaytimeService"/>
+        </member>
+        <member name="M:DaytimeService.NET.UdpDaytimeService.Dispose">
+            <inheritdoc cref="T:System.IDisposable"/>
+        </member>
+    </members>
+</doc>

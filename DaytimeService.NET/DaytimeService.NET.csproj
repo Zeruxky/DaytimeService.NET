@@ -4,12 +4,16 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\DEV\DaytimeService.NET\DaytimeService.NET\DaytimeService.NET.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="..\stylecop.json" Link="stylecop.json" />
+    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
